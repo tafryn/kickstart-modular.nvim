@@ -104,6 +104,9 @@ require 'custom/keymaps'
 -- [[ Autocommands ]]
 require 'custom/autocmds'
 
+-- [[ TMUX title hack ]]
+require 'tmux-navigate'
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 require 'lazy-bootstrap'
 

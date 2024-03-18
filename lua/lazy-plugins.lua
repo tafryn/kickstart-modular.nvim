@@ -72,6 +72,27 @@ require('lazy').setup({
   require 'custom/kickstart-plugins/fidget',
   require 'custom/kickstart-plugins/which-key',
   require 'custom/kickstart-plugins/more-mini',
+
+  -- Add additional custom plugins
+  require 'custom/plugins/gruvbox-material',
+  require 'custom/plugins/dial',
+  require 'custom/plugins/nvim-bqf',
+  require 'custom/plugins/diffview',
+  require 'custom/plugins/harpoon',
+  require 'custom/plugins/tabby',
+  require 'custom/plugins/vim-strip-trailing-whitespace',
+  require 'custom/plugins/leap',
+  require 'custom/plugins/flit',
+  require 'custom/plugins/peek',
+  require 'custom/plugins/nvim-scissors',
+  require 'custom/plugins/neotest',
+  require 'custom/plugins/vim-projectionist',
+  require 'custom/plugins/vim-rsi',
+  require 'custom/plugins/vim-wordmotion',
+  require 'custom/plugins/toggleterm',
+  require 'custom/plugins/nvim-tree',
+  require 'custom/plugins/project',
+  require 'custom/plugins/breadcrumbs',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

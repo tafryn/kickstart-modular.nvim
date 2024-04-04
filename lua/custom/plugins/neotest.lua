@@ -5,11 +5,12 @@ return {
       'nvim-treesitter/nvim-treesitter',
       'nvim-lua/plenary.nvim',
       'alfaix/neotest-gtest',
+      'rouge8/neotest-rust',
       -- your other adapters here
     },
     init = function()
       require('neotest').setup {
-        adapters = { require('neotest-gtest').setup {} },
+        adapters = { require('neotest-gtest').setup {}, require 'neotest-rust' },
         summary = {
           enabled = true,
           open = 'botright vsplit | vertical resize 50',

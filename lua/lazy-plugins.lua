@@ -94,6 +94,7 @@ require('lazy').setup({
   require 'custom/plugins/nvim-tree',
   require 'custom/plugins/project',
   require 'custom/plugins/breadcrumbs',
+  require 'custom/plugins/scrollofffraction',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

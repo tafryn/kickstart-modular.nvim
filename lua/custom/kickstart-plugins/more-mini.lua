@@ -11,6 +11,7 @@ return {
       mini_indentscope.setup { draw = { animation = mini_indentscope.gen_animation.none() }, symbol = '' }
 
       require('mini.bracketed').setup()
+      require('mini.pairs').setup()
 
       local starter_footer = (function()
         local timer = vim.loop.new_timer()

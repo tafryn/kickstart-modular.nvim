@@ -41,6 +41,8 @@ vim.keymap.set('n', '<leader>gh', '<cmd>Gitsigns next_hunk<CR>', { desc = '[G]it
 vim.keymap.set('n', '<leader>gt', '<cmd>Gitsigns prev_hunk<CR>', { desc = '[G]it Previous Hunk' })
 vim.keymap.set('n', '<leader>go', '<cmd>Gitsigns preview_hunk<CR>', { desc = '[G]it View [O]riginal' })
 
+vim.keymap.set('n', 'g.', '`.', { desc = '[G]oto last change' })
+
 -- Adjust irritating defaults
 vim.keymap.set('', 'gQ', '<Nop>', { noremap = true })
 vim.keymap.set('x', 'p', [["_dP]])

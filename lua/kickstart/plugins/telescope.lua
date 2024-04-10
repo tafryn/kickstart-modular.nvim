@@ -87,7 +87,7 @@ return {
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-      vim.keymap.set('n', '<leader>sb', builtin.resume, { desc = '[S]earch [B]uffers' })
+      vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = '[S]earch [B]uffers' })
       vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = '[B]uffers' })
       vim.keymap.set('n', '<leader>sp', builtin.git_files, { desc = '[S]earch [P]roject Files' })
       vim.keymap.set('n', '<leader>o', builtin.git_files, { desc = '[O]pen Project File' })

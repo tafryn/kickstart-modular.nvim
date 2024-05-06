@@ -73,6 +73,7 @@ require('lazy').setup({
   require 'custom/kickstart-plugins/which-key',
   require 'custom/kickstart-plugins/more-mini',
   require 'custom/kickstart-plugins/conform',
+  require 'custom/kickstart-plugins/gitsigns',
 
   -- Add additional custom plugins
   require 'custom/plugins/gruvbox-material',

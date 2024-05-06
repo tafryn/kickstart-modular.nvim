@@ -28,18 +28,13 @@ end
 
 vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = '[Q]uit' })
 vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { desc = '[W]rite to file' })
-vim.keymap.set('n', '<leader>h', '<cmd>nohlsearch<CR>', { desc = 'Clear Search [H]ighlights' })
+vim.keymap.set('n', '<leader>l', '<cmd>nohlsearch<CR>', { desc = 'Clear Search High[l]ights' })
 vim.keymap.set('n', '<leader>H', reference_highlight_toggle, { desc = 'Toggle Reference *H*ighlights' })
 vim.keymap.set('n', '<leader>T', '<cmd>tabnew<CR>', { desc = 'Open *T*ab' })
 vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, { desc = '[C]ode diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>cf', function() vim.lsp.buf.format { asinc = true } end, { desc = '[C]ode [F]ormat' })
 vim.keymap.set('n', '<leader>ch', '<cmd>lua vim.diagnostic.hide()<CR>', { desc = '[C]ode [H]ide Diagnostics' })
 vim.keymap.set('n', '<leader>cd', '<cmd>lua vim.diagnostic.show()<CR>', { desc = '[C]ode Show [D]iagnostics' })
-vim.keymap.set('n', '<leader>gl', '<cmd>Gitsigns blame_line<CR>', { desc = '[G]it [B]lame' })
-vim.keymap.set('n', '<leader>gr', '<cmd>Gitsigns reset_hunk<CR>', { desc = '[G]it [R]evert' })
-vim.keymap.set('n', '<leader>gh', '<cmd>Gitsigns next_hunk<CR>', { desc = '[G]it Next [H]unk' })
-vim.keymap.set('n', '<leader>gt', '<cmd>Gitsigns prev_hunk<CR>', { desc = '[G]it Previous Hunk' })
-vim.keymap.set('n', '<leader>go', '<cmd>Gitsigns preview_hunk<CR>', { desc = '[G]it View [O]riginal' })
 
 vim.keymap.set('n', 'g.', '`.', { desc = '[G]oto last change' })
 

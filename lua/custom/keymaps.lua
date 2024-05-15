@@ -26,9 +26,20 @@ local quickfix_toggle = function()
   return vim.cmd.copen()
 end
 
+local line_commit = function()
+  local linenr = vim.api.nvim_win_get_cursor(0)[1]
+  local filename = vim.fn.expand '%'
+  local command = 'git blame -L ' .. linenr .. ',' .. linenr .. ' ' .. filename .. " | awk '{print $1}' | xargs git wc | bat -l diff --paging always"
+
+  local Terminal = require('toggleterm.terminal').Terminal
+  local term = Terminal:new { cmd = command, count = 200, direction = 'float' }
+  term:toggle(nil, 'float')
+end
+
 vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = '[Q]uit' })
 vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { desc = '[W]rite to file' })
 vim.keymap.set('n', '<leader>l', '<cmd>nohlsearch<CR>', { desc = 'Clear Search High[l]ights' })
+vim.keymap.set('n', '<leader>i', line_commit, { desc = '[I]nspect commit for current line' })
 vim.keymap.set('n', '<leader>H', reference_highlight_toggle, { desc = 'Toggle Reference *H*ighlights' })
 vim.keymap.set('n', '<leader>T', '<cmd>tabnew<CR>', { desc = 'Open *T*ab' })
 vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, { desc = '[C]ode diagnostic [E]rror messages' })

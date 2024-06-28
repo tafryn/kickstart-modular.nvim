@@ -5,13 +5,42 @@ return {
       'nvim-neotest/nvim-nio',
       'nvim-treesitter/nvim-treesitter',
       'nvim-lua/plenary.nvim',
-      'alfaix/neotest-gtest',
+      {
+        'alfaix/neotest-gtest',
+        opts = {
+          is_test_file = function(path)
+            local lib = require 'neotest.lib'
+            local elems = vim.split(path, lib.files.sep, { plain = true })
+            local filename = elems[#elems]
+            if filename == '' then -- directory
+              return false
+            end
+            local extsplit = vim.split(filename, '.', { plain = true })
+            local extension = extsplit[#extsplit]
+            local fname_last_part = extsplit[#extsplit - 1]
+            local _test_extensions = {
+              ['cpp'] = true,
+              ['cppm'] = true,
+              ['cc'] = true,
+              ['cxx'] = true,
+              ['c++'] = true,
+            }
+            local result = _test_extensions[extension]
+                and (vim.startswith(filename, 'test_') or vim.endswith(fname_last_part, '_test') or vim.endswith(fname_last_part, '_unittest'))
+              or false
+            return result
+          end,
+        },
+      },
       'rouge8/neotest-rust',
       -- your other adapters here
     },
     init = function()
       require('neotest').setup {
-        adapters = { require('neotest-gtest').setup {}, require 'neotest-rust' },
+        adapters = {
+          require 'neotest-gtest',
+          require 'neotest-rust',
+        },
         summary = {
           enabled = true,
           open = 'botright vsplit | vertical resize 50',

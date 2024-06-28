@@ -20,9 +20,9 @@ return {
           0,
           1000,
           vim.schedule_wrap(function()
-            lazy_startup_stat = require('lazy').stats().startuptime
-            MiniStarter.refresh()
             if vim.bo.filetype == 'starter' then
+              lazy_startup_stat = require('lazy').stats().startuptime
+              MiniStarter.refresh()
               timer:stop()
               return
             end

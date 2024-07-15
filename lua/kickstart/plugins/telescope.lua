@@ -91,6 +91,7 @@ return {
       vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = '[B]uffers' })
       vim.keymap.set('n', '<leader>sp', builtin.git_files, { desc = '[S]earch [P]roject Files' })
       vim.keymap.set('n', '<leader>o', builtin.git_files, { desc = '[O]pen Project File' })
+      vim.keymap.set('n', '<leader>sm', builtin.git_status, { desc = '[S]earch [M]odified Files' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()

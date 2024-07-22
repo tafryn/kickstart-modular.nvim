@@ -3,8 +3,8 @@ return {
     'sindrets/diffview.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
     config = function()
-      require('which-key').register {
-        ['<leader>D'] = { name = '[D]iffview', _ = 'which_key_ignore' },
+      require('which-key').add {
+        { '<leader>D', group = '[D]iffview' },
       }
       vim.keymap.set('n', '<leader>Dc', '<cmd>DiffviewClose<CR>', { desc = '[D]iffview [C]lose', noremap = true })
       vim.keymap.set('n', '<leader>Df', '<cmd>DiffviewFileHistory %<CR>', { desc = '[D]iffview [F]ile history', noremap = true })

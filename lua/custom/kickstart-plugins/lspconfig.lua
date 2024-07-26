@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     unmap '<leader>ws'
     unmap '<leader>ds'
     unmap '<leader>rn'
-    unmap 'K'
+    unmap '<leader>th'
 
     map('gy', require('telescope.builtin').lsp_type_definitions, '[G]oto T[y]pe Definition')
     map('<leader>sd', require('telescope.builtin').lsp_document_symbols, '[S]earch [D]ocument symbols')

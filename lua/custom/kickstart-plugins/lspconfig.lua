@@ -9,7 +9,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
     unmap '<leader>ws'
     unmap '<leader>ds'
     unmap '<leader>rn'
-    unmap '<leader>th'
+    local mappings = vim.api.nvim_buf_get_keymap(0, 'n')
+    for _, mapping in pairs(mappings) do
+      if mapping.lhs == ' th' then
+        unmap '<leader>th'
+      end
+    end
 
     map('gy', require('telescope.builtin').lsp_type_definitions, '[G]oto T[y]pe Definition')
     map('<leader>sd', require('telescope.builtin').lsp_document_symbols, '[S]earch [D]ocument symbols')
